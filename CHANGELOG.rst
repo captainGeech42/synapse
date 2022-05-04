@@ -4,6 +4,49 @@
 Synapse Changelog
 *****************
 
+v2.93.0 - TBD
+====================
+
+Features and Enhancements
+-------------------------
+- Updates to the ``inet`` and ``infotech`` models.
+  (`#2666 <https://github.com/vertexproject/synapse/pull/2666>`_)
+
+  ``inet:url``
+    The ``inet:url`` type now recognizes various ``file:///`` values from
+    RFC 8089.
+
+  ``it:sec:cve``
+    The ``it:sec:cve`` type now replaces various Unicode dashes with hyphen
+    characters when norming. This allows a wider range of inputs to be
+    accepted for the type. Scrape related APIs have also been updated to
+    match on this wider range of inputs.
+
+
+- Add ``$lib.jsonstor.cacheget()`` and ``lib.jsonstor.cacheset()`` functions
+  in Storm to easily implement data caching in the JSONStor.
+  (`#2662 <https://github.com/vertexproject/synapse/pull/2662>`_)
+- Add a ``params`` option to ``$lib.inet.http.connect()`` to pass parameters
+  when creating Websocket connetions in Storm.
+  (`#2664 <https://github.com/vertexproject/synapse/pull/2664>`_)
+
+Bugfixes
+--------
+- Ensure that CLI history files can be read too and writen upon
+  starting interactive CLI tools.
+  (`#2660 <https://github.com/vertexproject/synapse/pull/2660>`_)
+- Assorted unit tests fixes to make tests more stable.
+  (`#2656 <https://github.com/vertexproject/synapse/pull/2656>`_)
+  (`#2665 <https://github.com/vertexproject/synapse/pull/2665>`_)
+- Fix several uses of Python features which are formally deprecated
+  and may be removed in future Python versions.
+  (`#2668 <https://github.com/vertexproject/synapse/pull/2668>`_)
+
+Improved Documentation
+----------------------
+- Update the list of available Advanced and Rapid Power-Ups.
+  (`#2667 <https://github.com/vertexproject/synapse/pull/2667>`_)
+
 
 v2.92.0 - 2022-04-28
 ====================
