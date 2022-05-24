@@ -775,6 +775,7 @@ workflows:
             branches:
               only:
                 - master
+                - dev_bootcellmirror_refactor
 
       - gh-release/dorelease:
           requires:

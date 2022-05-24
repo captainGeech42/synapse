@@ -2637,6 +2637,9 @@ class Cell(s_nexus.Pusher, s_telepath.Aware):
                         memb.name = memb.name.split('/', 1)[1]
                         tgz.extract(memb, self.dirn)
 
+                await asyncio.sleep(1)
+                logger.info(f'Tearing down src proxy @ {murl}')
+
         finally:
 
             if os.path.isfile(tarpath):
