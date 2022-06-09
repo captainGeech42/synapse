@@ -2095,7 +2095,9 @@ class Parser:
             mesg = f'Argument type "{argtype}" is not a valid model type name'
             raise s_exc.BadArg(mesg=mesg, argtype=str(argtype))
 
+        # print('calling _get_dest')
         dest = self._get_dest(names)
+        # print(f'called _get_dest, got {dest=}')
         opts.setdefault('dest', dest)
         self.allargs.append((names, opts))
 

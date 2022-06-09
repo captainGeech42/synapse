@@ -78,7 +78,10 @@ def claim(typ, **info):
     '''
     stack = s_task.varget('provstack')
     # logger.info(f'claim: {typ} {info} Provenance stack length {len(stack)=}')
-    if len(stack) > 256:
+    stacklen = len(stack)
+    if stacklen >= 241:
+        breakpoint()
+    if stacklen > 256:
         baseframe = stack.provs[1]
         recent_frames = stack.provs[-6:]
         raise s_exc.RecursionLimitHit(mesg='Hit provenance claim recursion limit',
